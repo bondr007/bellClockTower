@@ -1,6 +1,9 @@
 FROM balenalib/rpi-raspbian
 
 ENV TIMEZONE America/Chicago
+RUN echo "America/Chicago" > /etc/timezone
+RUN dpkg-reconfigure tzdata
+
 
 RUN sudo echo "America/New_York" > /etc/timezone
 RUN sudo dpkg-reconfigure -f noninteractive tzdata
@@ -38,4 +41,4 @@ RUN echo "0 20 * * * omxplayer /clock_bells/8.mp3" | crontab
 #RUN echo "0 22 * * * omxplayer /clock_bells/10.mp3" | crontab
 #RUN echo "0 23 * * * omxplayer /clock_bells/11.mp3" | crontab
 
-CMD ["echo", "HappyBirthdayContainer"]
+CMD ["cron", "-f"]
