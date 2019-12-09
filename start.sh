@@ -5,6 +5,8 @@
 echo "Setting time zone to ${TIMEZONE}"
 # This only works on Debian-based images
 echo "${TIMEZONE}" > /etc/timezone
+echo "cat ing timezone file"
+cat /etc/timezone
 dpkg-reconfigure tzdata
 
 # start conrtab 
