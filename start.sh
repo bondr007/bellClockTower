@@ -12,5 +12,6 @@ dpkg-reconfigure tzdata
 echo "current time is: "
 date
 
+
 # start conrtab 
 cron -f
