@@ -19,7 +19,7 @@ COPY crontab_clock /crontab_clock
 ####
 # Uncomment the lines in crontab_clock as needed for which hours to run on
 ####
-RUN echo /crontab_clock | crontab
+RUN cat /crontab_clock | crontab -
 
 
 CMD ["cron", "-f"]
