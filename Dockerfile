@@ -1,5 +1,8 @@
 FROM balenalib/rpi-raspbian
 
+ENV TZ America/Chicago
+ENV TIMEZONE America/Chicago
+
 RUN apt-get update && apt-get install -yq --no-install-recommends \
 	mplayer cron \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/*
