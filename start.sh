@@ -1,6 +1,12 @@
 
 #!/usr/bin/bash
 
+
+mkdir /mnt/ramdisk
+mount -t tmpfs -o size=25m tmpfs /mnt/ramdisk
+
+copy /clock_bells /mnt/ramdisk/clock_bells
+
 # Default to UTC if no TIMEZONE env variable is set
 echo "Setting time zone to ${TIMEZONE}"
 # This only works on Debian-based images
